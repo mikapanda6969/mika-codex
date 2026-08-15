@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta name="description" content="残りのお金と給料日から、今日使える金額をかんたん計算。" />
+    <title>1日いくら使える？</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="brand" aria-label="1日いくら使える？">
+        <span class="brand-mark" aria-hidden="true">¥</span>
+        <span>1日いくら使える？</span>
+      </header>
+
+      <section class="hero">
+        <p class="eyebrow">DAILY BUDGET</p>
+        <h1>今日から、<br /><em>無理なく</em>使える金額。</h1>
+        <p class="lead">残りのお金と次の給料日を入れるだけ。<br class="desktop-only" />毎日のちょうどいい予算がすぐにわかります。</p>
+      </section>
+
+      <section class="calculator" aria-labelledby="calculator-title">
+        <h2 id="calculator-title" class="sr-only">1日あたりの予算を計算</h2>
+        <form id="budget-form" novalidate>
+          <div class="field">
+            <label for="balance">今月残っているお金</label>
+            <div class="input-wrap money-input">
+              <span aria-hidden="true">¥</span>
+              <input id="balance" name="balance" type="text" inputmode="numeric" autocomplete="off" placeholder="50,000" aria-describedby="balance-hint balance-error" />
+              <small id="balance-hint">円</small>
+            </div>
+            <p class="error" id="balance-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="payday">次の給料日</label>
+            <div class="input-wrap date-input">
+              <input id="payday" name="payday" type="date" aria-describedby="payday-error" />
+              <span class="calendar-icon" aria-hidden="true"></span>
+            </div>
+            <p class="error" id="payday-error" role="alert"></p>
+          </div>
+
+          <button type="submit">
+            <span>計算する</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div id="result" class="result" aria-live="polite" hidden>
+          <div class="result-top">
+            <div>
+              <p>今日から1日</p>
+              <div class="amount"><span>¥</span><strong id="daily-amount">0</strong><small>まで</small></div>
+            </div>
+            <div class="result-icon" aria-hidden="true">✓</div>
+          </div>
+          <div class="result-meta">
+            <span><b id="days-left">0日間</b>で計算</span>
+            <span><b id="payday-label">—</b>まで</span>
+          </div>
+          <p class="result-note">今日の予算を意識して、気持ちよく過ごしましょう。</p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-divider"><span></span><p>暮らしに、ちいさな安心を。</p><span></span></div>
+        <section class="guide-card" aria-label="マネーアドバイザー美香のご案内">
+          <div class="guide-links">
+            <a href="https://www.instagram.com/mama.mika.mama?igsh=dnJ3dmlsM2MyejUx&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">
+              <span class="guide-label">私のInstagramはこちら💁‍♀️</span>
+              <span class="guide-value">@mama.mika.mama</span>
+              <span class="guide-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://open.substack.com/pub/mikamama" target="_blank" rel="noopener noreferrer">
+              <span class="guide-label">私のメルマガはこちら✍🏻</span>
+              <span class="guide-value">open.substack.com/pub/mikamama</span>
+              <span class="guide-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="mailto:okaidoku.happy@gmail.com">
+              <span class="guide-label">お問合せ・ご相談はこちら💁‍♀️</span>
+              <span class="guide-value">okaidoku.happy@gmail.com</span>
+              <span class="guide-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div class="advisor-message">
+            <p>マネーアドバイザー美香は</p>
+            <strong>「スマホひとつで叶えられる未来」</strong>
+            <p>をご提案しています</p>
+          </div>
+        </section>
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
